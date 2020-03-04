@@ -1,6 +1,7 @@
 # Head_Tracker_Capstone-EXPO
 Head Tracker for Oregon State University Engineering Expo
 
+
 # Problem Statement 
 
 
@@ -12,6 +13,8 @@ Fast, accurate, and lightweight software used for helicopter pilots display head
 Primary software tools and languages: python, C, multithreading, microcontrollers, and linux kernel environment scheduling.
 
 # Software Desgin & Requirements
+
+// insert picture of overview 
 External interfaces: Rpi to IMU, RPi to Mag, Rpi to LEDs, Rpi trigger system
 Press a button (physical or keyboard)
 Time available (CPU or GPS?)
