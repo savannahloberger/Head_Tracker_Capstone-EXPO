@@ -1,16 +1,19 @@
 # Head_Tracker_Capstone-EXPO
 Head Tracker for Oregon State University Engineering Expo
 
+For helicopter pilots to make use of AR (Augmented Reality) within their displays, they need to have their head movements tracked accurately and with little latency.
 
 # Problem Statement 
 
-For helicopter pilots to make use of AR (Augmented Reality) within their displays, they need to have their head movements tracked accurately and with little latency.
+During real time flights, pilots can use tools that display augmented reality to users. However, if there is a discrepancy between the real world and what is being shown to a pilot, there can be miscommunication, loss of information, or poor decisions made by pilots based on faulty information. Because of this, our client’s goal is to create a system that is able to display an augmented reality that matches the real world with additional information to the user.
+
+Even when using accurate sensors for reading changes in the environment, there is possibilities for errrors in the readings. By combining and averaging 6 different sensors position readings, we hope to minimize error as much as possible. 
 
 # Project Description 
 
 Our project is a low cost, accurate, and low-latency implementation of a head tracker that is desinged for pilots. By combining a Raspberry Pi, 6 IMU sensors, and software, we can display and track an accurate location of the pilots head. 
 
-Fast, accurate, and lightweight software used for helicopter pilots display head positioning that averages IMU sensor data and corrects drift. 
+The software will read the data from the sensors, calculate the head position based on the data, and send the head position to the display system in real time for testing. The software will be applied to an AR system which used to improve the pilots’ safety and operation during their flight. For this project, the software is designed to read data from six IMU units and run on Linux that is installed on a Raspberry Pi. Fast, accurate, and lightweight software used for helicopter pilots display head positioning that averages IMU sensor data and corrects drift. 
 
 Primary software tools and languages: python, C, multithreading, microcontrollers, and linux kernel environment scheduling. 
 
@@ -46,19 +49,32 @@ Main functions that will be included in the software are:
 
 Design: 
 - 
+For this software we focused on the parameters, keeping the overall system light weight and fast. The software can be described as two main components, the software library and the main function. 
+
+
+The library supports the functionality required of the software:  
+- Average
+- Check connections
+- Data 
+- Display 
+- Dummy (practice data)
+- Logging 
+- Read data 
+- Run time 
+- Utilities 
 
 
 
 Requirements: 
 -
-- External interfaces: Rpi to IMU, RPi to Mag, Rpi to LEDs, Rpi trigger system
-- Press a button (physical or keyboard)
-- Time available (CPU or GPS?)
-- Built-In Test: am I talking to the cube or is it dead
+
+- Communication with External interfaces: Rpi to IMU, RPi to Mag, Rpi to LEDs, Rpi trigger system
+- Press a button to start (physical or keyboard)
+- Built-In Test 
 - SW functions: 
     - calculate drift at 10 Hz when system is parked
-    - read sensors over time, plot (?) - store data in file with timestamp accurate to XXX ascii readable (or some format)
-- Sensors = 9dofs of the chip x 6 chips and photodetectors if using LED system
+    - read sensors over time and store data in file with time change
+- Sensors = 9dofs of the chip x 6 chips 
 - Track relative drift and flag anomalies
 
 
